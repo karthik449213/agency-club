@@ -1,0 +1,2 @@
+- [x] Update "Get Started" buttons in navbar to link to #pricing section
+- [x] Test navigation by running the app and verifying smooth scroll to pricing section
