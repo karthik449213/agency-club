@@ -1,46 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bot, Database, Workflow, Zap, Shield, BarChart3 } from "lucide-react";
+import {PhoneCall,Linkedin,MessageSquare,Zap, CalendarCheck, BarChart3 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
-  {
-    icon: Bot,
-    title: "AI-Powered Automation",
-    description: "Leverage machine learning and AI to automate complex decision-making processes and intelligent workflows.",
-    features: ["Machine Learning Integration", "Intelligent Decision Making", "Predictive Analytics"],
-  },
-  {
-    icon: Workflow,
-    title: "Process Optimization",
-    description: "Streamline your business processes with automated workflows that eliminate bottlenecks and reduce manual effort.",
-    features: ["Workflow Automation", "Process Mapping", "Efficiency Analysis"],
-  },
-  {
-    icon: Database,
-    title: "Data Integration",
-    description: "Connect disparate systems and databases to create a unified data ecosystem for better insights and automation.",
-    features: ["API Integration", "Data Synchronization", "Real-time Sync"],
-  },
-  {
-    icon: Zap,
-    title: "Rapid Deployment",
-    description: "Get your automation solutions up and running quickly with our agile development and deployment processes.",
-    features: ["Quick Setup", "Scalable Solutions", "24/7 Support"],
-  },
-  {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Ensure your automated systems are secure with enterprise-grade security measures and compliance standards.",
-    features: ["Data Encryption", "Compliance Ready", "Access Control"],
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics & Reporting",
-    description: "Gain valuable insights from your automated processes with comprehensive analytics and reporting dashboards.",
-    features: ["Real-time Metrics", "Custom Dashboards", "Performance Tracking"],
-  },
+ {
+  icon: PhoneCall,
+  title: "AI Voice Call Receptionist",
+  description: "24/7 AI-powered voice agent that answers calls, qualifies leads, books appointments, and never misses a customer.",
+  features: ["24/7 Call Handling", "Lead Qualification", "Appointment Booking"],
+},
+{
+  icon: Linkedin,
+  title: "LinkedIn Outreach Agent",
+  description: "Automated LinkedIn AI agent that finds ideal prospects, sends personalized messages, follows up, and books meetings.",
+  features: ["Prospect Discovery", "Personalized Outreach", "Auto Follow-ups"],
+},
+{
+  icon: MessageSquare,
+  title: "AI Customer Support Agent",
+  description: "Omni-channel AI support agent that handles customer queries across chat, WhatsApp, and email instantly.",
+  features: ["Instant Responses", "Multi-Channel Support", "Human Escalation"],
+},
+{
+  icon: BarChart3,
+  title: "AI Sales & CRM Assistant",
+  description: "AI agent that automates CRM updates, follow-ups, lead scoring, and provides actionable sales insights.",
+  features: ["CRM Automation", "Lead Scoring", "Sales Insights"],
+},
+{
+  icon: CalendarCheck,
+  title: "AI Appointment & Follow-Up Agent",
+  description: "Smart AI agent that manages bookings, reminders, no-show follow-ups, and re-engagement automatically.",
+  features: ["Automated Scheduling", "Reminder Notifications", "No-Show Recovery"],
+},
+{
+  icon: Zap,
+  title: "AI Workflow & Operations Automation",
+  description: "End-to-end AI automation that connects tools, eliminates manual work, and optimizes business operations.",
+  features: ["Tool Integrations", "Process Automation", "Real-Time Monitoring"],
+},
+
 ];
 
 export function Services() {
