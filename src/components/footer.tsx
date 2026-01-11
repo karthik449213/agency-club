@@ -3,10 +3,12 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
   services: [
-    { name: "Process Automation", href: "#" },
-    { name: "Data Integration", href: "#" },
-    { name: "Workflow Optimization", href: "#" },
-    { name: "AI Implementation", href: "#" },
+    { name: "AI Voice Call Receptionist", href: "#" },
+    { name: "LinkedIn Outreach Agent", href: "#" },
+    { name: "AI Customer Support Agent", href: "#" },
+    { name: "AI Sales & CRM Assistant", href: "#" },
+      { name: "AI Appointment & Follow-Up Agent", href: "#" },
+        { name: "AI Workflow & Operations Automation", href: "#" },
   ],
   company: [
     { name: "About Us", href: "#" },
@@ -40,15 +42,15 @@ export function Footer() {
             <div className="space-y-2">
               <div className="flex items-center text-muted-foreground">
                 <Mail size={16} className="mr-2" />
-                hello@automationagency.com
+                karthikpiinasi@gmail.com
               </div>
               <div className="flex items-center text-muted-foreground">
                 <Phone size={16} className="mr-2" />
-                +1 (555) 123-4567
+                +91 7075543886
               </div>
               <div className="flex items-center text-muted-foreground">
                 <MapPin size={16} className="mr-2" />
-                San Francisco, CA
+                Andhra Pradesh, India
               </div>
             </div>
           </div>
