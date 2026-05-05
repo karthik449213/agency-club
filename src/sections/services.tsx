@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {PhoneCall,Linkedin,MessageSquare,Zap, CalendarCheck, BarChart3 } from "lucide-react";
+import {PhoneCall,Linkedin,MessageSquare,Zap, CalendarCheck,Megaphone,Users, BarChart3,TrendingUp,Search,PenTool,Calendar,Database,Workflow } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ServiceDetailsModal } from "@/components/service-details-modal";
 import { useState } from "react";
@@ -25,203 +25,327 @@ interface Service {
 }
 
 const services: Service[] = [
- {
-  icon: PhoneCall,
-  title: "AI Voice Call Receptionist",
-  description: "24/7 AI-powered voice agent that answers calls, qualifies leads, books appointments, and never misses a customer.",
-  features: ["24/7 Call Handling", "Lead Qualification", "Appointment Booking"],
+{
+  icon: TrendingUp,
+  title: "AI Sales Agent System",
+  description: "Autonomous AI agent that captures, qualifies, and follows up with leads to drive conversions.",
+  features: ["Lead Qualification", "Automated Follow-ups", "Appointment Booking"],
   details: {
-    title: "AI Voice Call Receptionist",
-    pricing: "₹8,000 setup + ₹2,000/month (API cost extra)",
-    attraction: "Never miss a call again — 24/7 AI call handling.",
+    title: "AI Sales Agent System",
+    pricing: "₹25,000 setup + ₹8,000/month",
+    attraction: "Turn every lead into a conversation without hiring more sales reps.",
     includes: [
-      "AI answers incoming calls",
-      "Collects caller details & intent",
-      "Routes calls or logs enquiries",
-      "Call summary sent to your team"
+      "Lead capture automation",
+      "AI qualification logic",
+      "Automated email/WhatsApp follow-ups",
+      "Meeting scheduling system"
     ],
     freebies: [
-      "Custom greeting script",
-      "Business hours logic",
-      "Call summary template"
+      "Lead funnel design",
+      "CRM integration",
+      "Basic sales scripts"
     ],
     benefits: [
-      "No missed enquiries",
-      "Reduced staff load",
-      "Professional first impression"
+      "Instant lead response",
+      "Reduced manual work",
+      "Higher engagement rates"
     ],
     outcomes: [
-      "Higher enquiry capture",
-      "Faster response",
-      "Better customer experience"
+      "More booked calls",
+      "Increased conversions",
+      "Faster sales cycles"
     ]
   }
 },
 {
-  icon: Linkedin,
-  title: "LinkedIn Outreach Agent",
-  description: "Automated LinkedIn AI agent that finds ideal prospects, sends personalized messages, follows up, and books meetings.",
-  features: ["Prospect Discovery", "Personalized Outreach", "Auto Follow-ups"],
-  details: {
-  title: "LinkedIn Outreach Agent",
-  pricing: "₹10,000 setup + ₹3,000/month",
-  attraction: "Automated LinkedIn outreach that feels personal, not spammy.",
-  includes: [
-    "Targeted profile outreach",
-    "Connection request automation",
-    "Multi-step follow-up messages",
-    "Response tracking & lead tagging"
-  ],
-  freebies: [
-    "Message copywriting",
-    "Ideal customer profile setup",
-    "Lead tracking sheet"
-  ],
-  benefits: [
-    "Saves manual effort",
-    "Consistent daily outreach",
-    "Improved response rates"
-  ],
-  outcomes: [
-    "More sales conversations",
-    "Qualified B2B leads",
-    "Predictable lead pipeline"
-  ]
-}
-
-},
-{
   icon: MessageSquare,
   title: "AI Customer Support Agent",
-  description: "Omni-channel AI support agent that handles customer queries across chat, WhatsApp, and email instantly.",
-  features: ["Instant Responses", "Multi-Channel Support", "Human Escalation"],
+  description: "24/7 AI support agent that resolves queries, reduces tickets, and improves customer experience.",
+  features: ["24/7 Support", "Ticket Automation", "Multi-channel"],
   details: {
-  title: "AI Customer Support Agent",
-  pricing: "₹12,000 setup + ₹3,000/month (platform cost extra)",
-  attraction: "Instant customer support replies, 24/7.",
-  includes: [
-    "Website or WhatsApp chat support",
-    "FAQ handling",
-    "Basic issue resolution",
-    "Human handoff when required"
-  ],
-  freebies: [
-    "FAQ setup (up to 30 questions)",
-    "Brand tone customization",
-    "Chat escalation rules"
-  ],
-  benefits: [
-    "Faster customer support",
-    "Reduced support tickets",
-    "Always-available assistance"
-  ],
-  outcomes: [
-    "Higher customer satisfaction",
-    "Lower support workload",
-    "Improved customer retention"
-  ]
-}
-
+    title: "AI Customer Support Agent",
+    pricing: "₹20,000 setup + ₹6,000/month",
+    attraction: "Handle 80% of support queries automatically.",
+    includes: [
+      "Website chatbot",
+      "FAQ automation",
+      "Ticket routing system",
+      "WhatsApp/email integration"
+    ],
+    freebies: [
+      "Knowledge base setup",
+      "Conversation design",
+      "Support flow mapping"
+    ],
+    benefits: [
+      "Reduced workload",
+      "Faster response time",
+      "Consistent support quality"
+    ],
+    outcomes: [
+      "Lower support costs",
+      "Higher customer satisfaction",
+      "Scalable support system"
+    ]
+  }
+},
+{
+  icon: Users,
+  title: "AI Lead Generation Engine",
+  description: "Automated system that finds, enriches, and reaches out to potential customers.",
+  features: ["Data Scraping", "Cold Outreach", "Lead Enrichment"],
+  details: {
+    title: "AI Lead Generation Engine",
+    pricing: "₹30,000 setup + ₹10,000/month",
+    attraction: "A continuous pipeline of qualified leads without manual effort.",
+    includes: [
+      "Target audience scraping",
+      "Email personalization AI",
+      "Outreach automation",
+      "Lead database management"
+    ],
+    freebies: [
+      "ICP definition",
+      "Cold email templates",
+      "Lead tracking dashboard"
+    ],
+    benefits: [
+      "Consistent lead flow",
+      "Reduced prospecting time",
+      "Better targeting"
+    ],
+    outcomes: [
+      "More opportunities",
+      "Improved outreach response rates",
+      "Predictable pipeline"
+    ]
+  }
+},
+{
+  icon: Megaphone,
+  title: "AI Marketing Automation System",
+  description: "End-to-end automation for email campaigns, nurturing, and customer engagement.",
+  features: ["Email Automation", "Campaign Management", "Segmentation"],
+  details: {
+    title: "AI Marketing Automation System",
+    pricing: "₹18,000 setup + ₹5,000/month",
+    attraction: "Automatically nurture and convert your audience.",
+    includes: [
+      "Email workflows",
+      "Customer segmentation",
+      "Campaign scheduling",
+      "Behavior-based triggers"
+    ],
+    freebies: [
+      "Campaign templates",
+      "Customer journey mapping",
+      "Email copy setup"
+    ],
+    benefits: [
+      "Better engagement",
+      "Consistent communication",
+      "Reduced manual work"
+    ],
+    outcomes: [
+      "Higher open rates",
+      "Improved retention",
+      "More conversions"
+    ]
+  }
+},
+{
+  icon: Workflow,
+  title: "AI Workflow Automation System",
+  description: "Automates repetitive business processes across tools and teams.",
+  features: ["Process Automation", "Tool Integration", "Task Elimination"],
+  details: {
+    title: "AI Workflow Automation System",
+    pricing: "₹35,000 setup + ₹12,000/month",
+    attraction: "Eliminate repetitive work and run operations on autopilot.",
+    includes: [
+      "Custom workflow design",
+      "Tool integrations",
+      "Trigger-based automation",
+      "Process monitoring"
+    ],
+    freebies: [
+      "Process audit",
+      "Automation blueprint",
+      "Efficiency report"
+    ],
+    benefits: [
+      "Time savings",
+      "Reduced errors",
+      "Operational efficiency"
+    ],
+    outcomes: [
+      "Lower costs",
+      "Faster processes",
+      "Scalable operations"
+    ]
+  }
+},
+{
+  icon: Database,
+  title: "AI Knowledge Base System",
+  description: "Chat with your company data using an AI-powered knowledge system.",
+  features: ["Document Search", "Internal Chatbot", "Data Retrieval"],
+  details: {
+    title: "AI Knowledge Base System",
+    pricing: "₹22,000 setup + ₹7,000/month",
+    attraction: "Your entire business knowledge in one AI assistant.",
+    includes: [
+      "Document ingestion",
+      "Searchable knowledge base",
+      "Internal chatbot",
+      "Secure access control"
+    ],
+    freebies: [
+      "Data structuring",
+      "Knowledge organization",
+      "Search optimization"
+    ],
+    benefits: [
+      "Instant information access",
+      "Reduced dependency on teams",
+      "Better decision-making"
+    ],
+    outcomes: [
+      "Faster workflows",
+      "Improved productivity",
+      "Knowledge centralization"
+    ]
+  }
 },
 {
   icon: BarChart3,
-  title: "AI Sales & CRM Assistant",
-  description: "AI agent that automates CRM updates, follow-ups, lead scoring, and provides actionable sales insights.",
-  features: ["CRM Automation", "Lead Scoring", "Sales Insights"],
+  title: "AI Data Analytics Agent",
+  description: "AI agent that analyzes business data and provides actionable insights.",
+  features: ["Data Analysis", "KPI Tracking", "Forecasting"],
   details: {
-  title: "AI Sales & CRM Assistant",
-  pricing: "₹15,000 setup + ₹4,000/month",
-  attraction: "Your AI assistant that tracks, organizes, and follows up on every lead.",
-  includes: [
-    "Lead capture and tagging",
-    "CRM pipeline automation",
-    "Automated follow-up reminders",
-    "Sales status tracking"
-  ],
-  freebies: [
-    "CRM structure design",
-    "Sales pipeline setup",
-    "Lead status dashboard"
-  ],
-  benefits: [
-    "No lead leakage",
-    "Clear sales visibility",
-    "Organized follow-ups"
-  ],
-  outcomes: [
-    "Higher conversion rates",
-    "Faster deal movement",
-    "Better sales accountability"
-  ]
-}
-
+    title: "AI Data Analytics Agent",
+    pricing: "₹28,000 setup + ₹9,000/month",
+    attraction: "Make smarter decisions with real-time AI insights.",
+    includes: [
+      "Dashboard creation",
+      "KPI tracking",
+      "Predictive analytics",
+      "Automated reports"
+    ],
+    freebies: [
+      "Data cleanup",
+      "Metric definition",
+      "Visualization setup"
+    ],
+    benefits: [
+      "Data-driven decisions",
+      "Real-time visibility",
+      "Improved planning"
+    ],
+    outcomes: [
+      "Higher efficiency",
+      "Better forecasting",
+      "Improved performance"
+    ]
+  }
 },
 {
-  icon: CalendarCheck,
-  title: "AI Appointment & Follow-Up Agent",
-  description: "Smart AI agent that manages bookings, reminders, no-show follow-ups, and re-engagement automatically.",
-  features: ["Automated Scheduling", "Reminder Notifications", "No-Show Recovery"],
+  icon: Calendar,
+  title: "AI Appointment Booking Agent",
+  description: "Automates scheduling, reminders, and calendar management.",
+  features: ["Auto Scheduling", "Reminders", "Calendar Sync"],
   details: {
-  title: "AI Appointment & Follow-Up Agent",
-  pricing: "₹10,000 setup + ₹3,000/month",
-  attraction: "Automated appointment booking and reminders without manual work.",
-  includes: [
-    "Appointment scheduling automation",
-    "Confirmation messages",
-    "Reminder and follow-up messages",
-    "Calendar integration"
-  ],
-  freebies: [
-    "Reminder message templates",
-    "Rescheduling logic",
-    "Booking flow optimization"
-  ],
-  benefits: [
-    "Reduced no-shows",
-    "Saves admin time",
-    "Smooth booking experience"
-  ],
-  outcomes: [
-    "Higher appointment attendance",
-    "Better time utilization",
-    "Improved customer trust"
-  ]
-}
-
+    title: "AI Appointment Booking Agent",
+    pricing: "₹12,000 setup + ₹3,000/month",
+    attraction: "Never miss a meeting or follow-up again.",
+    includes: [
+      "Calendar integration",
+      "Booking system",
+      "Automated reminders",
+      "Rescheduling automation"
+    ],
+    freebies: [
+      "Calendar setup",
+      "Booking page design",
+      "Reminder templates"
+    ],
+    benefits: [
+      "No scheduling conflicts",
+      "Reduced no-shows",
+      "Time savings"
+    ],
+    outcomes: [
+      "Better time management",
+      "Higher attendance rates",
+      "Improved efficiency"
+    ]
+  }
 },
 {
-  icon: Zap,
-  title: "AI Workflow & Operations Automation",
-  description: "End-to-end AI automation that connects tools, eliminates manual work, and optimizes business operations.",
-  features: ["Tool Integrations", "Process Automation", "Real-Time Monitoring"],
+  icon: PenTool,
+  title: "AI Content Creation Engine",
+  description: "Automated system for generating blogs, ads, and social media content.",
+  features: ["Content Generation", "SEO Optimization", "Bulk Creation"],
   details: {
-  title: "AI Workflow & Operations Automation",
-  pricing: "₹20,000+ setup + ₹5,000/month (depends on complexity)",
-  attraction: "Automate repetitive tasks and streamline daily operations.",
-  includes: [
-    "Workflow automation setup",
-    "Tool and system integrations",
-    "Data synchronization",
-    "Process optimization"
-  ],
-  freebies: [
-    "Workflow audit",
-    "Automation roadmap",
-    "Process documentation"
-  ],
-  benefits: [
-    "Reduced manual effort",
-    "Fewer operational errors",
-    "Faster execution"
-  ],
-  outcomes: [
-    "Improved efficiency",
-    "Lower operational costs",
-    "Scalable business operations"
-  ]
-}
-
+    title: "AI Content Creation Engine",
+    pricing: "₹15,000 setup + ₹5,000/month",
+    attraction: "Create high-quality content at scale without a full team.",
+    includes: [
+      "Content pipelines",
+      "SEO optimization",
+      "Social media posts",
+      "Ad copy generation"
+    ],
+    freebies: [
+      "Content strategy",
+      "Keyword research",
+      "Templates"
+    ],
+    benefits: [
+      "Faster content creation",
+      "Consistency",
+      "Cost savings"
+    ],
+    outcomes: [
+      "Increased traffic",
+      "Better engagement",
+      "Stronger brand presence"
+    ]
+  }
 },
+{
+  icon: Search,
+  title: "AI Business Process Audit",
+  description: "Identify automation opportunities and build a roadmap for AI implementation.",
+  features: ["Process Audit", "ROI Analysis", "Strategy"],
+  details: {
+    title: "AI Business Process Audit",
+    pricing: "₹10,000 one-time",
+    attraction: "Discover exactly where AI can save you time and money.",
+    includes: [
+      "Workflow analysis",
+      "Automation opportunities",
+      "ROI estimation",
+      "Implementation roadmap"
+    ],
+    freebies: [
+      "Consultation call",
+      "Priority roadmap",
+      "Tool recommendations"
+    ],
+    benefits: [
+      "Clarity",
+      "Better planning",
+      "Risk reduction"
+    ],
+    outcomes: [
+      "Clear action plan",
+      "Faster adoption",
+      "Higher ROI"
+    ]
+  }
+},
+
 
 ];
 

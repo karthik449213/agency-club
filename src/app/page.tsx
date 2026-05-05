@@ -4,7 +4,7 @@ import { Hero } from "@/sections/hero";
 import { TrustedBy } from "@/sections/trusted-by";
 import { Services } from "@/sections/services";
 import { HowItWorks } from "@/sections/how-it-works";
-import { CaseStudies } from "@/sections/case-studies";
+
 import { Testimonials } from "@/sections/testimonials";
 import { Pricing } from "@/sections/pricing";
 import { Contact } from "@/sections/contact";
@@ -18,7 +18,7 @@ export default function Home() {
         <TrustedBy />
         <Services />
         <HowItWorks />
-        <CaseStudies />
+      
         <Testimonials />
         <Pricing />
         <Contact />
