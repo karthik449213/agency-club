@@ -19,15 +19,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium"
-          >
-            🚀 Transforming Businesses Through Automation
-          </motion.div>
+          
 
           {/* Main Heading */}
           <motion.h1

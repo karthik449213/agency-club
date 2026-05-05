@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {PhoneCall,Linkedin,MessageSquare,Zap, CalendarCheck,Megaphone,Users, BarChart3,TrendingUp,Search,PenTool,Calendar,Database,Workflow } from "lucide-react";
+import { MessageCircle, MessageSquare, Calendar, Mail, Headphones, Building, Users, Share2, DollarSign, TrendingUp, Zap, Star, Shield, Megaphone } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ServiceDetailsModal } from "@/components/service-details-modal";
 import { useState } from "react";
@@ -26,327 +26,510 @@ interface Service {
 
 const services: Service[] = [
 {
-  icon: TrendingUp,
-  title: "AI Sales Agent System",
-  description: "Autonomous AI agent that captures, qualifies, and follows up with leads to drive conversions.",
-  features: ["Lead Qualification", "Automated Follow-ups", "Appointment Booking"],
+  icon: MessageCircle,
+  title: "Lead Capture & Auto-Qualifier Bot",
+  description: "Capture leads from website, WhatsApp, and forms—then automatically qualify and score them in real-time.",
+  features: ["Multi-channel lead capture", "Instant qualification scoring", "Auto-route hot leads", "Lead intelligence dashboard"],
   details: {
-    title: "AI Sales Agent System",
+    title: "Lead Capture & Auto-Qualifier Bot",
     pricing: "₹25,000 setup + ₹8,000/month",
-    attraction: "Turn every lead into a conversation without hiring more sales reps.",
+    attraction: "Stop losing leads. Capture and qualify every prospect automatically—24/7.",
     includes: [
-      "Lead capture automation",
-      "AI qualification logic",
-      "Automated email/WhatsApp follow-ups",
-      "Meeting scheduling system"
+      "Website chat widget setup",
+      "WhatsApp bot integration",
+      "Custom qualification workflow",
+      "Lead scoring rules engine",
+      "Google Sheets + CRM sync",
+      "Weekly performance report"
     ],
     freebies: [
-      "Lead funnel design",
-      "CRM integration",
-      "Basic sales scripts"
+      "3 months of lead source analysis",
+      "Free qualification script creation"
     ],
     benefits: [
-      "Instant lead response",
-      "Reduced manual work",
-      "Higher engagement rates"
+      "Capture 3-5x more leads without hiring",
+      "Pre-qualified leads only → higher close rates",
+      "24/7 availability (no more missed calls)",
+      "Save 10+ hours/week on manual qualification"
     ],
     outcomes: [
-      "More booked calls",
-      "Increased conversions",
-      "Faster sales cycles"
+      "Expected 40-60% increase in qualified leads",
+      "Average response time: < 2 minutes",
+      "Lead quality improvement by 50%"
     ]
   }
 },
 {
   icon: MessageSquare,
-  title: "AI Customer Support Agent",
-  description: "24/7 AI support agent that resolves queries, reduces tickets, and improves customer experience.",
-  features: ["24/7 Support", "Ticket Automation", "Multi-channel"],
+  title: "WhatsApp Sales Automation Engine",
+  description: "Send personalized WhatsApp sequences to leads—follow-ups, reminders, and upsells on autopilot.",
+  features: ["Personalized multi-message sequences", "Trigger-based automation", "Product catalog integration", "Performance analytics"],
   details: {
-    title: "AI Customer Support Agent",
-    pricing: "₹20,000 setup + ₹6,000/month",
-    attraction: "Handle 80% of support queries automatically.",
-    includes: [
-      "Website chatbot",
-      "FAQ automation",
-      "Ticket routing system",
-      "WhatsApp/email integration"
-    ],
-    freebies: [
-      "Knowledge base setup",
-      "Conversation design",
-      "Support flow mapping"
-    ],
-    benefits: [
-      "Reduced workload",
-      "Faster response time",
-      "Consistent support quality"
-    ],
-    outcomes: [
-      "Lower support costs",
-      "Higher customer satisfaction",
-      "Scalable support system"
-    ]
-  }
-},
-{
-  icon: Users,
-  title: "AI Lead Generation Engine",
-  description: "Automated system that finds, enriches, and reaches out to potential customers.",
-  features: ["Data Scraping", "Cold Outreach", "Lead Enrichment"],
-  details: {
-    title: "AI Lead Generation Engine",
-    pricing: "₹30,000 setup + ₹10,000/month",
-    attraction: "A continuous pipeline of qualified leads without manual effort.",
-    includes: [
-      "Target audience scraping",
-      "Email personalization AI",
-      "Outreach automation",
-      "Lead database management"
-    ],
-    freebies: [
-      "ICP definition",
-      "Cold email templates",
-      "Lead tracking dashboard"
-    ],
-    benefits: [
-      "Consistent lead flow",
-      "Reduced prospecting time",
-      "Better targeting"
-    ],
-    outcomes: [
-      "More opportunities",
-      "Improved outreach response rates",
-      "Predictable pipeline"
-    ]
-  }
-},
-{
-  icon: Megaphone,
-  title: "AI Marketing Automation System",
-  description: "End-to-end automation for email campaigns, nurturing, and customer engagement.",
-  features: ["Email Automation", "Campaign Management", "Segmentation"],
-  details: {
-    title: "AI Marketing Automation System",
-    pricing: "₹18,000 setup + ₹5,000/month",
-    attraction: "Automatically nurture and convert your audience.",
-    includes: [
-      "Email workflows",
-      "Customer segmentation",
-      "Campaign scheduling",
-      "Behavior-based triggers"
-    ],
-    freebies: [
-      "Campaign templates",
-      "Customer journey mapping",
-      "Email copy setup"
-    ],
-    benefits: [
-      "Better engagement",
-      "Consistent communication",
-      "Reduced manual work"
-    ],
-    outcomes: [
-      "Higher open rates",
-      "Improved retention",
-      "More conversions"
-    ]
-  }
-},
-{
-  icon: Workflow,
-  title: "AI Workflow Automation System",
-  description: "Automates repetitive business processes across tools and teams.",
-  features: ["Process Automation", "Tool Integration", "Task Elimination"],
-  details: {
-    title: "AI Workflow Automation System",
+    title: "WhatsApp Sales Automation Engine",
     pricing: "₹35,000 setup + ₹12,000/month",
-    attraction: "Eliminate repetitive work and run operations on autopilot.",
+    attraction: "Send the right message at the right time. WhatsApp, not email—10x higher engagement.",
     includes: [
-      "Custom workflow design",
-      "Tool integrations",
-      "Trigger-based automation",
-      "Process monitoring"
+      "WhatsApp Business API setup",
+      "5 pre-built sales sequences",
+      "Contact list management",
+      "Template library (50+ templates)",
+      "Click-to-action button automation",
+      "Conversion tracking & reporting"
     ],
     freebies: [
-      "Process audit",
-      "Automation blueprint",
-      "Efficiency report"
+      "First 30 days of free message credits",
+      "Sales copy templates for your industry"
     ],
     benefits: [
-      "Time savings",
-      "Reduced errors",
-      "Operational efficiency"
+      "WhatsApp gets 10x higher open rates than email",
+      "Reduce follow-up time by 70%",
+      "Close deals faster with automated reminders",
+      "Save 15+ hours/week on manual follow-ups"
     ],
     outcomes: [
-      "Lower costs",
-      "Faster processes",
-      "Scalable operations"
-    ]
-  }
-},
-{
-  icon: Database,
-  title: "AI Knowledge Base System",
-  description: "Chat with your company data using an AI-powered knowledge system.",
-  features: ["Document Search", "Internal Chatbot", "Data Retrieval"],
-  details: {
-    title: "AI Knowledge Base System",
-    pricing: "₹22,000 setup + ₹7,000/month",
-    attraction: "Your entire business knowledge in one AI assistant.",
-    includes: [
-      "Document ingestion",
-      "Searchable knowledge base",
-      "Internal chatbot",
-      "Secure access control"
-    ],
-    freebies: [
-      "Data structuring",
-      "Knowledge organization",
-      "Search optimization"
-    ],
-    benefits: [
-      "Instant information access",
-      "Reduced dependency on teams",
-      "Better decision-making"
-    ],
-    outcomes: [
-      "Faster workflows",
-      "Improved productivity",
-      "Knowledge centralization"
-    ]
-  }
-},
-{
-  icon: BarChart3,
-  title: "AI Data Analytics Agent",
-  description: "AI agent that analyzes business data and provides actionable insights.",
-  features: ["Data Analysis", "KPI Tracking", "Forecasting"],
-  details: {
-    title: "AI Data Analytics Agent",
-    pricing: "₹28,000 setup + ₹9,000/month",
-    attraction: "Make smarter decisions with real-time AI insights.",
-    includes: [
-      "Dashboard creation",
-      "KPI tracking",
-      "Predictive analytics",
-      "Automated reports"
-    ],
-    freebies: [
-      "Data cleanup",
-      "Metric definition",
-      "Visualization setup"
-    ],
-    benefits: [
-      "Data-driven decisions",
-      "Real-time visibility",
-      "Improved planning"
-    ],
-    outcomes: [
-      "Higher efficiency",
-      "Better forecasting",
-      "Improved performance"
+      "Expected 25-35% conversion rate improvement",
+      "Average deal velocity: 40% faster",
+      "Customer engagement: +200%"
     ]
   }
 },
 {
   icon: Calendar,
-  title: "AI Appointment Booking Agent",
-  description: "Automates scheduling, reminders, and calendar management.",
-  features: ["Auto Scheduling", "Reminders", "Calendar Sync"],
+  title: "Smart Appointment Booking & Reminders",
+  description: "Auto-book appointments, send reminders, and reduce no-shows with AI-powered scheduling.",
+  features: ["Calendar sync integration", "Automated confirmations", "No-show prevention", "Rescheduling automation"],
   details: {
-    title: "AI Appointment Booking Agent",
-    pricing: "₹12,000 setup + ₹3,000/month",
-    attraction: "Never miss a meeting or follow-up again.",
+    title: "Smart Appointment Booking & Reminders",
+    pricing: "₹18,000 setup + ₹6,000/month",
+    attraction: "Stop chasing clients for appointment confirmations. Automate bookings and cut no-shows by 50%.",
     includes: [
-      "Calendar integration",
-      "Booking system",
-      "Automated reminders",
-      "Rescheduling automation"
+      "Booking widget (website + WhatsApp)",
+      "Calendar integration setup",
+      "3 automated reminder sequences",
+      "SMS + WhatsApp confirmations",
+      "No-show recovery automation",
+      "Monthly no-show analytics"
     ],
     freebies: [
-      "Calendar setup",
-      "Booking page design",
-      "Reminder templates"
+      "Reminder message templates",
+      "No-show recovery script"
     ],
     benefits: [
-      "No scheduling conflicts",
-      "Reduced no-shows",
-      "Time savings"
+      "Cut no-shows by 40-50%",
+      "Eliminate manual booking confirmations",
+      "More bookings = predictable revenue",
+      "Save 5+ hours/week"
     ],
     outcomes: [
-      "Better time management",
-      "Higher attendance rates",
-      "Improved efficiency"
+      "No-show rate reduction: 40-50%",
+      "Booking confirmation rate: 95%+",
+      "Recovery calls automated: 100%"
     ]
   }
 },
 {
-  icon: PenTool,
-  title: "AI Content Creation Engine",
-  description: "Automated system for generating blogs, ads, and social media content.",
-  features: ["Content Generation", "SEO Optimization", "Bulk Creation"],
+  icon: Mail,
+  title: "Automated Email & SMS Nurture Campaigns",
+  description: "Send personalized email and SMS sequences based on customer behavior—convert leads to customers on autopilot.",
+  features: ["Behavioral trigger automation", "A/B testing", "Personalization tokens", "Compliance management"],
   details: {
-    title: "AI Content Creation Engine",
-    pricing: "₹15,000 setup + ₹5,000/month",
-    attraction: "Create high-quality content at scale without a full team.",
+    title: "Automated Email & SMS Nurture Campaigns",
+    pricing: "₹40,000 setup + ₹15,000/month",
+    attraction: "Stop sending generic emails. Deliver the right message to the right person at the right time—automatically.",
     includes: [
-      "Content pipelines",
-      "SEO optimization",
-      "Social media posts",
-      "Ad copy generation"
+      "10 pre-built nurture sequences",
+      "Email + SMS dual channel setup",
+      "Behavioral trigger automation",
+      "A/B testing on all campaigns",
+      "Subscriber segmentation engine",
+      "Weekly performance dashboard",
+      "Contact list enrichment"
     ],
     freebies: [
-      "Content strategy",
-      "Keyword research",
-      "Templates"
+      "90-day content calendar template",
+      "Email copywriting workshop (1 session)"
     ],
     benefits: [
-      "Faster content creation",
-      "Consistency",
-      "Cost savings"
+      "Increase customer lifetime value by 30-50%",
+      "Higher open rates (email: 25-35%, SMS: 40-60%)",
+      "Personalization → 3x more conversions",
+      "Save 20+ hours/week on manual campaigns"
     ],
     outcomes: [
-      "Increased traffic",
-      "Better engagement",
-      "Stronger brand presence"
+      "Expected email conversion rate: 5-8%",
+      "SMS conversion rate: 15-25%",
+      "Customer retention improvement: 35%"
     ]
   }
 },
 {
-  icon: Search,
-  title: "AI Business Process Audit",
-  description: "Identify automation opportunities and build a roadmap for AI implementation.",
-  features: ["Process Audit", "ROI Analysis", "Strategy"],
+  icon: Headphones,
+  title: "AI Customer Support Chatbot",
+  description: "Handle 80% of customer support questions automatically with an AI chatbot—24/7, no humans needed.",
+  features: ["Natural language AI", "Multi-channel support", "Seamless handoff", "Knowledge base learning"],
   details: {
-    title: "AI Business Process Audit",
-    pricing: "₹10,000 one-time",
-    attraction: "Discover exactly where AI can save you time and money.",
+    title: "AI Customer Support Chatbot",
+    pricing: "₹50,000 setup + ₹18,000/month",
+    attraction: "Handle customer questions 24/7 without hiring support staff. Reduce support costs by 60%.",
     includes: [
-      "Workflow analysis",
-      "Automation opportunities",
-      "ROI estimation",
-      "Implementation roadmap"
+      "AI chatbot training on your FAQ",
+      "Website + WhatsApp integration",
+      "Knowledge base setup (100+ Q&As)",
+      "Sentiment analysis (for escalations)",
+      "Agent handoff workflow",
+      "Monthly analytics report",
+      "Quarterly retraining on new FAQs"
     ],
     freebies: [
-      "Consultation call",
-      "Priority roadmap",
-      "Tool recommendations"
+      "FAQ documentation template",
+      "Customer service script optimization"
     ],
     benefits: [
-      "Clarity",
-      "Better planning",
-      "Risk reduction"
+      "Handle 80% of questions without humans",
+      "Response time: instant (vs 2-24 hours)",
+      "Reduce support costs by 60%",
+      "Customer satisfaction improves with 24/7 availability"
     ],
     outcomes: [
-      "Clear action plan",
-      "Faster adoption",
-      "Higher ROI"
+      "Support ticket resolution: 80% automated",
+      "Average response time: < 30 seconds",
+      "Customer satisfaction score: +40%",
+      "Support cost reduction: ₹20k-30k/month saved"
     ]
   }
 },
-
-
+{
+  icon: Building,
+  title: "Real Estate Lead Pipeline Automator",
+  description: "Capture property inquiries, auto-qualify buyers, send property details, and track deal status—fully automated.",
+  features: ["Multi-source lead capture", "Buyer profile qualification", "Property recommendations", "Deal pipeline tracking"],
+  details: {
+    title: "Real Estate Lead Pipeline Automator",
+    pricing: "₹75,000 setup + ₹22,000/month",
+    attraction: "Never lose a property inquiry again. Auto-qualify buyers, send relevant properties, and close faster.",
+    includes: [
+      "Lead capture from 5+ sources",
+      "Buyer profile & budget qualification",
+      "Property database integration",
+      "Personalized property recommendations (AI)",
+      "Follow-up automation (8-touch sequence)",
+      "Deal pipeline CRM (pipeline tracking)",
+      "Monthly lead source & conversion analysis",
+      "Listing sync automation"
+    ],
+    freebies: [
+      "Property photography optimization guide",
+      "Sales follow-up script for real estate"
+    ],
+    benefits: [
+      "Capture leads from all sources in one place",
+      "Auto-qualify serious buyers (save 10+ hours/week)",
+      "Faster follow-up = faster deals",
+      "Track every deal from inquiry to close",
+      "Increase deal velocity by 40%"
+    ],
+    outcomes: [
+      "Lead response time: < 5 minutes",
+      "Deal qualification speed: 50% faster",
+      "Close rate improvement: 25-35%",
+      "Average deal velocity: 20 days faster"
+    ]
+  }
+},
+{
+  icon: Users,
+  title: "Coaching Client Onboarding Automation",
+  description: "Welcome new coaching clients with automated sequences, assignments, payment reminders, and progress tracking.",
+  features: ["Personalized onboarding sequences", "Automated assignments", "Payment reminders", "Progress tracking dashboard"],
+  details: {
+    title: "Coaching Client Onboarding Automation",
+    pricing: "₹45,000 setup + ₹14,000/month",
+    attraction: "Deliver a premium client experience automatically. Reduce admin work by 70% while keeping clients engaged.",
+    includes: [
+      "Onboarding email sequence (10 emails)",
+      "Client assessment forms (auto-analysis)",
+      "Weekly assignment delivery automation",
+      "Payment reminder system",
+      "Invoice + receipt automation",
+      "Client progress dashboard",
+      "Milestone celebration automation"
+    ],
+    freebies: [
+      "Client journey mapping template",
+      "Coaching assessment question library"
+    ],
+    benefits: [
+      "Premium client experience = higher retention",
+      "Save 15+ hours/week on admin",
+      "Never chase clients for payments again",
+      "Track client progress automatically"
+    ],
+    outcomes: [
+      "Client onboarding time: 50% faster",
+      "Payment collection rate: 98%+",
+      "Client retention improvement: 40%",
+      "Admin time saved: 15+ hours/week"
+    ]
+  }
+},
+{
+  icon: Share2,
+  title: "Social Media Content Calendar & Auto-Posting",
+  description: "Plan, schedule, and auto-post social media content across all platforms—consistency without effort.",
+  features: ["Multi-platform scheduling", "AI content calendar", "Auto-repurposing", "Performance analytics"],
+  details: {
+    title: "Social Media Content Calendar & Auto-Posting",
+    pricing: "₹22,000 setup + ₹7,000/month",
+    attraction: "Stop scrolling. Stay consistent on social media without spending hours creating and posting daily.",
+    includes: [
+      "Social media audit (current performance)",
+      "Content calendar template (90 days)",
+      "Automated posting setup (all major platforms)",
+      "Content repurposing automation",
+      "Monthly performance analytics",
+      "Hashtag optimization",
+      "Engagement response templates"
+    ],
+    freebies: [
+      "Content idea list for your industry (50+ ideas)",
+      "Social media graphics template pack"
+    ],
+    benefits: [
+      "Post consistently without daily effort",
+      "20x better reach with optimal timing",
+      "Repurpose content across 5+ platforms instantly",
+      "Save 8+ hours/week on posting"
+    ],
+    outcomes: [
+      "Post consistency: 100% (no missed days)",
+      "Engagement rate improvement: 3-5x",
+      "Follower growth: +30-50%/month",
+      "Time saved: 8+ hours/week"
+    ]
+  }
+},
+{
+  icon: DollarSign,
+  title: "Invoice & Payment Follow-up Automation",
+  description: "Auto-send invoices, payment reminders, and late payment alerts—reduce invoice cycle time by 50%.",
+  features: ["Automatic invoice generation", "Escalating reminders", "Late payment alerts", "Payment tracking"],
+  details: {
+    title: "Invoice & Payment Follow-up Automation",
+    pricing: "₹28,000 setup + ₹9,000/month",
+    attraction: "Stop chasing unpaid invoices. Get paid faster with automated reminders and clear payment tracking.",
+    includes: [
+      "Invoice generation automation",
+      "3-touch payment reminder sequence",
+      "Late payment alerts (SMS + email)",
+      "Payment tracking dashboard",
+      "Receipt generation & delivery",
+      "Integration with Razorpay/PayU/UPI",
+      "Monthly cash flow report"
+    ],
+    freebies: [
+      "Invoice template customization",
+      "Payment terms optimization guide"
+    ],
+    benefits: [
+      "Get paid 20-30 days faster",
+      "Reduce unpaid invoices by 40%",
+      "Stop manual payment chasing",
+      "Clear payment status visibility",
+      "Improve cash flow by 25%"
+    ],
+    outcomes: [
+      "Invoice payment time: 20-30 days faster",
+      "Unpaid invoice rate reduction: 40%",
+      "Cash collection rate: 95%+",
+      "DSO (Days Sales Outstanding): -25 days"
+    ]
+  }
+},
+{
+  icon: TrendingUp,
+  title: "Lead Scoring & Sales Pipeline Builder",
+  description: "Automatically score leads by likelihood to buy, build a transparent sales pipeline, and forecast revenue.",
+  features: ["AI-powered lead scoring", "Real-time pipeline visualization", "Predictive close dates", "Win/loss analysis"],
+  details: {
+    title: "Lead Scoring & Sales Pipeline Builder",
+    pricing: "₹85,000 setup + ₹28,000/month",
+    attraction: "Know exactly which leads to chase and when they'll close. Build a predictable, data-driven sales machine.",
+    includes: [
+      "Lead scoring model (AI-trained)",
+      "CRM pipeline setup with stages",
+      "Deal probability scoring",
+      "Revenue forecasting dashboard",
+      "Automated deal alerts (hot leads)",
+      "Win/loss analysis automation",
+      "Sales velocity tracking",
+      "Monthly sales intelligence report"
+    ],
+    freebies: [
+      "Sales training workshop (2 sessions)",
+      "Deal-closing script library"
+    ],
+    benefits: [
+      "Focus sales effort on high-probability deals",
+      "Forecast revenue accurately (within 10%)",
+      "Identify deal bottlenecks automatically",
+      "Increase sales productivity by 30-40%"
+    ],
+    outcomes: [
+      "Lead scoring accuracy: 85-90%",
+      "Sales forecast accuracy: 90%+",
+      "Deal close rate improvement: 20-30%",
+      "Sales productivity increase: +35%",
+      "Pipeline visibility: 100% transparent"
+    ]
+  }
+},
+{
+  icon: Zap,
+  title: "Form Submission to CRM Instant Sync",
+  description: "Auto-sync form responses, survey answers, and contact info directly to your CRM—no manual data entry.",
+  features: ["Multi-form integration", "Smart field mapping", "Real-time sync", "Automatic tagging"],
+  details: {
+    title: "Form Submission to CRM Instant Sync",
+    pricing: "₹16,000 setup + ₹5,000/month",
+    attraction: "Every form response lands in your CRM instantly. No more copy-paste, no more missed data.",
+    includes: [
+      "Integration with 10+ form platforms",
+      "Smart field mapping setup",
+      "Duplicate detection & merging",
+      "Automatic contact tagging",
+      "List segmentation based on responses",
+      "Real-time sync (no delays)",
+      "Monthly sync health report"
+    ],
+    freebies: [
+      "Contact form optimization recommendations",
+      "CRM field structure optimization"
+    ],
+    benefits: [
+      "Zero manual data entry (100% automated)",
+      "No data loss from form submissions",
+      "Instant lead data availability",
+      "Save 5+ hours/week on data entry"
+    ],
+    outcomes: [
+      "Data sync latency: < 1 minute",
+      "Data accuracy: 99.9%",
+      "Manual data entry time: 0 hours",
+      "CRM data freshness: 100%"
+    ]
+  }
+},
+{
+  icon: Star,
+  title: "Automated Review & Reputation Management",
+  description: "Collect customer reviews automatically, respond to negative reviews, and monitor your online reputation 24/7.",
+  features: ["Automated review requests", "Multi-platform monitoring", "AI-suggested responses", "Reputation tracking"],
+  details: {
+    title: "Automated Review & Reputation Management",
+    pricing: "₹32,000 setup + ₹11,000/month",
+    attraction: "Turn satisfied customers into advocates. Automate review collection and protect your reputation online.",
+    includes: [
+      "Post-purchase review request automation",
+      "Multi-platform review monitoring (Google, Trustpilot, etc.)",
+      "AI-powered response suggestions",
+      "Negative review alerts",
+      "Review aggregation dashboard",
+      "Reputation score tracking",
+      "Monthly reputation analysis report"
+    ],
+    freebies: [
+      "Review response template library",
+      "Reputation management strategy guide"
+    ],
+    benefits: [
+      "50% more 5-star reviews (vs manual requests)",
+      "Respond faster to negative reviews",
+      "Build trust with potential customers",
+      "Improve local SEO rankings significantly"
+    ],
+    outcomes: [
+      "Review collection rate: +50%",
+      "Average rating improvement: +0.5 stars",
+      "Review response rate: 95%+",
+      "Negative review resolution: 70%"
+    ]
+  }
+},
+{
+  icon: Megaphone,
+  title: "Bulk SMS & Email Campaign Broadcaster",
+  description: "Send personalized SMS or email campaigns to thousands of customers in seconds—track opens and clicks.",
+  features: ["Segmented targeting", "Template builder", "Personalization at scale", "Real-time tracking"],
+  details: {
+    title: "Bulk SMS & Email Campaign Broadcaster",
+    pricing: "₹24,000 setup + ₹8,000/month (+ message credits)",
+    attraction: "Launch campaigns to 1,000+ customers instantly. Direct channel to customer inboxes and phones.",
+    includes: [
+      "SMS + email campaign platform setup",
+      "Segment creation (demographics, behavior)",
+      "Template library (100+ templates)",
+      "Bulk message scheduling",
+      "Personalization at scale",
+      "Click tracking + analytics",
+      "List management & hygiene",
+      "Monthly campaign performance report"
+    ],
+    freebies: [
+      "SMS copywriting best practices guide",
+      "Campaign template starter pack"
+    ],
+    benefits: [
+      "Reach customers directly (phones + inboxes)",
+      "SMS: 40-60% open rate (vs email: 25-35%)",
+      "Send to 10,000 in < 10 minutes",
+      "Track every click and conversion"
+    ],
+    outcomes: [
+      "Campaign delivery: 99%+ success rate",
+      "SMS open rate: 40-60%",
+      "Email open rate: 25-35%",
+      "Click-through rate: 5-15%"
+    ]
+  }
+},
+{
+  icon: Shield,
+  title: "Cancellation & Churn Recovery Automation",
+  description: "Automatically detect cancellation intent, offer incentives, and recover lost customers before they leave.",
+  features: ["Churn prediction AI", "Prevention workflows", "Win-back campaigns", "Retention metrics"],
+  details: {
+    title: "Cancellation & Churn Recovery Automation",
+    pricing: "₹60,000 setup + ₹20,000/month",
+    attraction: "Save 20% of customers before they cancel. Recover lost revenue automatically with smart retention.",
+    includes: [
+      "Churn prediction model training",
+      "Early warning system (at-risk customer alerts)",
+      "3-stage cancellation prevention workflow",
+      "Personalized retention offers",
+      "Win-back email sequences (for ex-customers)",
+      "Retention metrics dashboard",
+      "Monthly churn analysis report",
+      "Quarterly strategy optimization"
+    ],
+    freebies: [
+      "Retention script library",
+      "Customer lifecycle analysis"
+    ],
+    benefits: [
+      "Prevent 15-25% of cancellations",
+      "Recover 5-10% of churned customers",
+      "Reduce churn rate by 20%",
+      "Increase customer lifetime value by 30%"
+    ],
+    outcomes: [
+      "Cancellation prevention rate: 20%",
+      "Win-back conversion rate: 5-10%",
+      "Churn rate reduction: 20%",
+      "LTV improvement: +30%",
+      "Revenue retention: +₹50k-100k/month (avg)"
+    ]
+  }
+},
 ];
 
 export function Services() {
@@ -363,11 +546,10 @@ export function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Our Automation Services
+            Our AI Automation Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive automation solutions designed to transform your business
-            operations and drive sustainable growth.
+            Outcome-driven automation services designed to increase revenue, reduce costs, and eliminate manual work.
           </p>
         </motion.div>
 

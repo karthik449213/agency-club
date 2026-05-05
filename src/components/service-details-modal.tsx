@@ -38,20 +38,18 @@ export function ServiceDetailsModal({
 
       {/* Modal */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.3 }}
         className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
       >
         <div className="pointer-events-auto max-w-2xl w-full bg-card rounded-2xl border border-border shadow-2xl max-h-[90vh] overflow-y-auto">
           {/* Header */}
-          <div className="sticky top-0 bg-gradient-to-r from-primary/5 to-transparent border-b border-border px-6 py-6 flex items-center justify-between">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                {service.title}
-              </h2>
-            </div>
+          <div className="sticky top-0 z-10 bg-card border-b border-border px-6 py-6 flex items-center justify-between">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+              {service.title}
+            </h2>
             <button
               onClick={onClose}
               className="p-2 hover:bg-muted rounded-lg transition-colors"
