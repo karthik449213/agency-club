@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -119,13 +120,20 @@ export function Pricing() {
                     ))}
                   </ul>
 
-                  <Button
-                    className={`w-full ${plan.popular ? 'bg-primary hover:bg-primary/90' : ''}`}
-                    variant={plan.popular ? 'default' : 'outline'}
-                    size="lg"
+                  <Link
+                    href={`https://wa.me/917075543886?text=Hi! I'm interested in the ${encodeURIComponent(plan.name)} plan - ${encodeURIComponent(plan.price)}/${plan.period}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
-                  </Button>
+                    <Button
+                      className={`w-full ${plan.popular ? 'bg-primary hover:bg-primary/90' : ''}`}
+                      variant={plan.popular ? 'default' : 'outline'}
+                      size="lg"
+                      asChild
+                    >
+                      <span>{plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}</span>
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </motion.div>

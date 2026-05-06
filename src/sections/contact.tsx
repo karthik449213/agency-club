@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 const contactInfo = [
   {
@@ -14,6 +15,7 @@ const contactInfo = [
     description: "Get in touch via email",
     contact: "karthikpiinasi@gmail.com",
     action: "Send Email",
+    link: "mailto:karthikpiinasi@gmail.com",
   },
   {
     icon: Phone,
@@ -21,17 +23,48 @@ const contactInfo = [
     description: "Speak with our experts",
     contact: "+91 7075543886",
     action: "Call Now",
+    link: "tel:+917075543886",
   },
   {
-    icon: MapPin,
-    title: "Visit Us",
-    description: "Come to our office",
-    contact: "Andhra Pradesh, India",
-    action: "Get Directions",
+    icon: MessageCircle,
+    title: "WhatsApp",
+    description: "Chat with us instantly",
+    contact: "+91 7075543886",
+    action: "Message Us",
+    link: "https://wa.me/917075543886",
   },
 ];
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    message: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleWhatsAppSubmit = () => {
+    const { firstName, lastName, email, company, message } = formData;
+    if (!firstName || !email || !message) {
+      alert("Please fill in at least Name, Email, and Message");
+      return;
+    }
+
+    const fullName = `${firstName} ${lastName}`.trim();
+    const text = encodeURIComponent(
+      `Hi! My name is ${fullName}.\n\nCompany: ${company || "N/A"}\nEmail: ${email}\n\nMessage: ${message}`
+    );
+    window.open(`https://wa.me/917075543886?text=${text}`, "_blank");
+  };
+
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,9 +126,11 @@ export function Contact() {
                           <p className="text-foreground font-medium mb-3">
                             {info.contact}
                           </p>
-                          <Button variant="outline" size="sm">
-                            {info.action}
-                          </Button>
+                          <a href={info.link} target="_blank" rel="noopener noreferrer">
+                            <Button variant="outline" size="sm">
+                              {info.action}
+                            </Button>
+                          </a>
                         </div>
                       </div>
                     </CardContent>
@@ -125,13 +160,23 @@ export function Contact() {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       First Name
                     </label>
-                    <Input placeholder="John" />
+                    <Input 
+                      placeholder="John"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Last Name
                     </label>
-                    <Input placeholder="Doe" />
+                    <Input 
+                      placeholder="Doe"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                    />
                   </div>
                 </div>
 
@@ -139,14 +184,25 @@ export function Contact() {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Email
                   </label>
-                  <Input type="email" placeholder="john@company.com" />
+                  <Input 
+                    type="email" 
+                    placeholder="john@company.com"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                  />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Company
                   </label>
-                  <Input placeholder="Your Company" />
+                  <Input 
+                    placeholder="Your Company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                  />
                 </div>
 
                 <div>
@@ -156,12 +212,19 @@ export function Contact() {
                   <Textarea
                     placeholder="Tell us about your automation needs..."
                     rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                   />
                 </div>
 
-                <Button className="w-full" size="lg">
+                <Button 
+                  className="w-full" 
+                  size="lg"
+                  onClick={handleWhatsAppSubmit}
+                >
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  Send via WhatsApp
                 </Button>
               </CardContent>
             </Card>

@@ -6,11 +6,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ServiceDetailsModal } from "@/components/service-details-modal";
 import { useState } from "react";
 
+interface PricingTier {
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  includes: string[];
+}
+
 interface ServiceDetail {
   title: string;
-  pricing: string;
+  pricing: PricingTier[];
   attraction: string;
-  includes: string[];
   freebies: string[];
   benefits: string[];
   outcomes: string[];
@@ -28,20 +35,34 @@ const services: Service[] = [
 {
   icon: MessageCircle,
   title: "Lead Capture & Auto-Qualifier Bot",
-  description: "Capture leads from website, WhatsApp, and forms—then automatically qualify and score them in real-time.",
+  description: "Capture leads from website, WhatsApp, and forms then automatically qualify and score them in real-time.",
   features: ["Multi-channel lead capture", "Instant qualification scoring", "Auto-route hot leads", "Lead intelligence dashboard"],
   details: {
     title: "Lead Capture & Auto-Qualifier Bot",
-    pricing: "₹25,000 setup + ₹8,000/month",
-    attraction: "Stop losing leads. Capture and qualify every prospect automatically—24/7.",
-    includes: [
-      "Website chat widget setup",
-      "WhatsApp bot integration",
-      "Custom qualification workflow",
-      "Lead scoring rules engine",
-      "Google Sheets + CRM sync",
-      "Weekly performance report"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$299",
+        period: "/month",
+        description: "Perfect for small businesses",
+        includes: ["Website chat widget", "Basic qualification", "Google Sheets sync", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$599",
+        period: "/month",
+        description: "For growing teams",
+        includes: ["All Starter features", "WhatsApp integration", "Custom workflows", "CRM integration", "Priority support", "Weekly reports"]
+      },
+      {
+        name: "Enterprise",
+        price: "$1,299",
+        period: "/month",
+        description: "Full-featured solution",
+        includes: ["All Professional features", "Multi-channel capture", "Advanced AI scoring", "API access", "24/7 support", "Custom integrations"]
+      }
     ],
+    attraction: "Stop losing leads. Capture and qualify every prospect automatically 24/7.",
     freebies: [
       "3 months of lead source analysis",
       "Free qualification script creation"
@@ -62,20 +83,34 @@ const services: Service[] = [
 {
   icon: MessageSquare,
   title: "WhatsApp Sales Automation Engine",
-  description: "Send personalized WhatsApp sequences to leads—follow-ups, reminders, and upsells on autopilot.",
+  description: "Send personalized WhatsApp sequences to leads follow-ups, reminders, and upsells on autopilot.",
   features: ["Personalized multi-message sequences", "Trigger-based automation", "Product catalog integration", "Performance analytics"],
   details: {
     title: "WhatsApp Sales Automation Engine",
-    pricing: "₹35,000 setup + ₹12,000/month",
-    attraction: "Send the right message at the right time. WhatsApp, not email—10x higher engagement.",
-    includes: [
-      "WhatsApp Business API setup",
-      "5 pre-built sales sequences",
-      "Contact list management",
-      "Template library (50+ templates)",
-      "Click-to-action button automation",
-      "Conversion tracking & reporting"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$399",
+        period: "/month",
+        description: "Getting started",
+        includes: ["3 pre-built sequences", "Basic templates", "Contact management", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$799",
+        period: "/month",
+        description: "Growing sales team",
+        includes: ["All Starter features", "Unlimited sequences", "Advanced templates", "Click tracking", "CRM sync", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$1,599",
+        period: "/month",
+        description: "High-volume campaigns",
+        includes: ["All Professional features", "Custom templates", "API access", "Advanced analytics", "Dedicated support"]
+      }
     ],
+    attraction: "Send the right message at the right time. WhatsApp, not email 10x higher engagement.",
     freebies: [
       "First 30 days of free message credits",
       "Sales copy templates for your industry"
@@ -100,16 +135,30 @@ const services: Service[] = [
   features: ["Calendar sync integration", "Automated confirmations", "No-show prevention", "Rescheduling automation"],
   details: {
     title: "Smart Appointment Booking & Reminders",
-    pricing: "₹18,000 setup + ₹6,000/month",
-    attraction: "Stop chasing clients for appointment confirmations. Automate bookings and cut no-shows by 50%.",
-    includes: [
-      "Booking widget (website + WhatsApp)",
-      "Calendar integration setup",
-      "3 automated reminder sequences",
-      "SMS + WhatsApp confirmations",
-      "No-show recovery automation",
-      "Monthly no-show analytics"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$199",
+        period: "/month",
+        description: "Small practices",
+        includes: ["Booking widget", "Basic reminders", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$499",
+        period: "/month",
+        description: "Growing businesses",
+        includes: ["All Starter features", "Calendar sync", "Multi-reminder sequences", "SMS + WhatsApp", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$999",
+        period: "/month",
+        description: "Large operations",
+        includes: ["All Professional features", "Custom workflows", "Advanced analytics", "API access", "24/7 support"]
+      }
     ],
+    attraction: "Stop chasing clients for appointment confirmations. Automate bookings and cut no-shows by 50%.",
     freebies: [
       "Reminder message templates",
       "No-show recovery script"
@@ -130,21 +179,34 @@ const services: Service[] = [
 {
   icon: Mail,
   title: "Automated Email & SMS Nurture Campaigns",
-  description: "Send personalized email and SMS sequences based on customer behavior—convert leads to customers on autopilot.",
+  description: "Send personalized email and SMS sequences based on customer behavior convert leads to customers on autopilot.",
   features: ["Behavioral trigger automation", "A/B testing", "Personalization tokens", "Compliance management"],
   details: {
     title: "Automated Email & SMS Nurture Campaigns",
-    pricing: "₹40,000 setup + ₹15,000/month",
-    attraction: "Stop sending generic emails. Deliver the right message to the right person at the right time—automatically.",
-    includes: [
-      "10 pre-built nurture sequences",
-      "Email + SMS dual channel setup",
-      "Behavioral trigger automation",
-      "A/B testing on all campaigns",
-      "Subscriber segmentation engine",
-      "Weekly performance dashboard",
-      "Contact list enrichment"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$349",
+        period: "/month",
+        description: "Getting started",
+        includes: ["3 pre-built sequences", "Basic analytics", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$799",
+        period: "/month",
+        description: "Growing businesses",
+        includes: ["All Starter features", "Unlimited sequences", "A/B testing", "Advanced segmentation", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$1,699",
+        period: "/month",
+        description: "Large-scale operations",
+        includes: ["All Professional features", "Custom workflows", "API access", "Advanced analytics", "Dedicated support"]
+      }
     ],
+    attraction: "Stop sending generic emails. Deliver the right message to the right person at the right time automatically.",
     freebies: [
       "90-day content calendar template",
       "Email copywriting workshop (1 session)"
@@ -165,21 +227,34 @@ const services: Service[] = [
 {
   icon: Headphones,
   title: "AI Customer Support Chatbot",
-  description: "Handle 80% of customer support questions automatically with an AI chatbot—24/7, no humans needed.",
+  description: "Handle 80% of customer support questions automatically with an AI chatbot 24/7, no humans needed.",
   features: ["Natural language AI", "Multi-channel support", "Seamless handoff", "Knowledge base learning"],
   details: {
     title: "AI Customer Support Chatbot",
-    pricing: "₹50,000 setup + ₹18,000/month",
-    attraction: "Handle customer questions 24/7 without hiring support staff. Reduce support costs by 60%.",
-    includes: [
-      "AI chatbot training on your FAQ",
-      "Website + WhatsApp integration",
-      "Knowledge base setup (100+ Q&As)",
-      "Sentiment analysis (for escalations)",
-      "Agent handoff workflow",
-      "Monthly analytics report",
-      "Quarterly retraining on new FAQs"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$499",
+        period: "/month",
+        description: "Small business",
+        includes: ["Website chatbot", "100+ FAQs", "Basic analytics", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$999",
+        period: "/month",
+        description: "Growing companies",
+        includes: ["All Starter features", "WhatsApp + Telegram", "Unlimited FAQs", "Sentiment analysis", "Agent handoff", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$1,999",
+        period: "/month",
+        description: "Large organizations",
+        includes: ["All Professional features", "Multi-language support", "Custom training", "Advanced analytics", "API access", "24/7 support"]
+      }
     ],
+    attraction: "Handle customer questions 24/7 without hiring support staff. Reduce support costs by 60%.",
     freebies: [
       "FAQ documentation template",
       "Customer service script optimization"
@@ -194,29 +269,41 @@ const services: Service[] = [
       "Support ticket resolution: 80% automated",
       "Average response time: < 30 seconds",
       "Customer satisfaction score: +40%",
-      "Support cost reduction: ₹20k-30k/month saved"
+      "Support cost reduction: $5-10k/month saved"
     ]
   }
 },
 {
   icon: Building,
   title: "Real Estate Lead Pipeline Automator",
-  description: "Capture property inquiries, auto-qualify buyers, send property details, and track deal status—fully automated.",
+  description: "Capture property inquiries, auto-qualify buyers, send property details, and track deal status fully automated.",
   features: ["Multi-source lead capture", "Buyer profile qualification", "Property recommendations", "Deal pipeline tracking"],
   details: {
     title: "Real Estate Lead Pipeline Automator",
-    pricing: "₹75,000 setup + ₹22,000/month",
-    attraction: "Never lose a property inquiry again. Auto-qualify buyers, send relevant properties, and close faster.",
-    includes: [
-      "Lead capture from 5+ sources",
-      "Buyer profile & budget qualification",
-      "Property database integration",
-      "Personalized property recommendations (AI)",
-      "Follow-up automation (8-touch sequence)",
-      "Deal pipeline CRM (pipeline tracking)",
-      "Monthly lead source & conversion analysis",
-      "Listing sync automation"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$699",
+        period: "/month",
+        description: "Single agent",
+        includes: ["Multi-source capture", "Basic qualification", "Lead tracking", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$1,499",
+        period: "/month",
+        description: "Small team",
+        includes: ["All Starter features", "AI buyer profiling", "Property recommendations", "CRM pipeline", "Follow-up automation", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$2,999",
+        period: "/month",
+        description: "Large teams",
+        includes: ["All Professional features", "Advanced analytics", "Custom integrations", "API access", "White-label options", "24/7 support"]
+      }
     ],
+    attraction: "Never lose a property inquiry again. Auto-qualify buyers, send relevant properties, and close faster.",
     freebies: [
       "Property photography optimization guide",
       "Sales follow-up script for real estate"
@@ -243,17 +330,30 @@ const services: Service[] = [
   features: ["Personalized onboarding sequences", "Automated assignments", "Payment reminders", "Progress tracking dashboard"],
   details: {
     title: "Coaching Client Onboarding Automation",
-    pricing: "₹45,000 setup + ₹14,000/month",
-    attraction: "Deliver a premium client experience automatically. Reduce admin work by 70% while keeping clients engaged.",
-    includes: [
-      "Onboarding email sequence (10 emails)",
-      "Client assessment forms (auto-analysis)",
-      "Weekly assignment delivery automation",
-      "Payment reminder system",
-      "Invoice + receipt automation",
-      "Client progress dashboard",
-      "Milestone celebration automation"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$349",
+        period: "/month",
+        description: "New coaches",
+        includes: ["Onboarding sequences", "Assignment automation", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$749",
+        period: "/month",
+        description: "Established coaches",
+        includes: ["All Starter features", "Payment automation", "Progress tracking", "Client dashboard", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$1,499",
+        period: "/month",
+        description: "Coaching agencies",
+        includes: ["All Professional features", "Multi-coach support", "Advanced analytics", "Custom workflows", "API access", "24/7 support"]
+      }
     ],
+    attraction: "Deliver a premium client experience automatically. Reduce admin work by 70% while keeping clients engaged.",
     freebies: [
       "Client journey mapping template",
       "Coaching assessment question library"
@@ -275,21 +375,34 @@ const services: Service[] = [
 {
   icon: Share2,
   title: "Social Media Content Calendar & Auto-Posting",
-  description: "Plan, schedule, and auto-post social media content across all platforms—consistency without effort.",
+  description: "Plan, schedule, and auto-post social media content across all platforms consistency without effort.",
   features: ["Multi-platform scheduling", "AI content calendar", "Auto-repurposing", "Performance analytics"],
   details: {
     title: "Social Media Content Calendar & Auto-Posting",
-    pricing: "₹22,000 setup + ₹7,000/month",
-    attraction: "Stop scrolling. Stay consistent on social media without spending hours creating and posting daily.",
-    includes: [
-      "Social media audit (current performance)",
-      "Content calendar template (90 days)",
-      "Automated posting setup (all major platforms)",
-      "Content repurposing automation",
-      "Monthly performance analytics",
-      "Hashtag optimization",
-      "Engagement response templates"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$249",
+        period: "/month",
+        description: "Solo creators",
+        includes: ["Multi-platform scheduling", "Content calendar", "Basic analytics", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$549",
+        period: "/month",
+        description: "Growing brands",
+        includes: ["All Starter features", "Content repurposing", "Advanced scheduling", "Team collaboration", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$1,199",
+        period: "/month",
+        description: "Agencies",
+        includes: ["All Professional features", "Multi-client management", "Advanced analytics", "API access", "Custom templates", "24/7 support"]
+      }
     ],
+    attraction: "Stop scrolling. Stay consistent on social media without spending hours creating and posting daily.",
     freebies: [
       "Content idea list for your industry (50+ ideas)",
       "Social media graphics template pack"
@@ -311,21 +424,34 @@ const services: Service[] = [
 {
   icon: DollarSign,
   title: "Invoice & Payment Follow-up Automation",
-  description: "Auto-send invoices, payment reminders, and late payment alerts—reduce invoice cycle time by 50%.",
+  description: "Auto-send invoices, payment reminders, and late payment alerts reduce invoice cycle time by 50%.",
   features: ["Automatic invoice generation", "Escalating reminders", "Late payment alerts", "Payment tracking"],
   details: {
     title: "Invoice & Payment Follow-up Automation",
-    pricing: "₹28,000 setup + ₹9,000/month",
-    attraction: "Stop chasing unpaid invoices. Get paid faster with automated reminders and clear payment tracking.",
-    includes: [
-      "Invoice generation automation",
-      "3-touch payment reminder sequence",
-      "Late payment alerts (SMS + email)",
-      "Payment tracking dashboard",
-      "Receipt generation & delivery",
-      "Integration with Razorpay/PayU/UPI",
-      "Monthly cash flow report"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$199",
+        period: "/month",
+        description: "Freelancers",
+        includes: ["Invoice automation", "Basic reminders", "Payment tracking", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$499",
+        period: "/month",
+        description: "Small businesses",
+        includes: ["All Starter features", "Multi-touch reminders", "Late payment alerts", "Payment gateway integration", "Analytics", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$999",
+        period: "/month",
+        description: "Large companies",
+        includes: ["All Professional features", "Custom workflows", "Advanced reporting", "API access", "White-label options", "24/7 support"]
+      }
     ],
+    attraction: "Stop chasing unpaid invoices. Get paid faster with automated reminders and clear payment tracking.",
     freebies: [
       "Invoice template customization",
       "Payment terms optimization guide"
@@ -352,18 +478,30 @@ const services: Service[] = [
   features: ["AI-powered lead scoring", "Real-time pipeline visualization", "Predictive close dates", "Win/loss analysis"],
   details: {
     title: "Lead Scoring & Sales Pipeline Builder",
-    pricing: "₹85,000 setup + ₹28,000/month",
-    attraction: "Know exactly which leads to chase and when they'll close. Build a predictable, data-driven sales machine.",
-    includes: [
-      "Lead scoring model (AI-trained)",
-      "CRM pipeline setup with stages",
-      "Deal probability scoring",
-      "Revenue forecasting dashboard",
-      "Automated deal alerts (hot leads)",
-      "Win/loss analysis automation",
-      "Sales velocity tracking",
-      "Monthly sales intelligence report"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$599",
+        period: "/month",
+        description: "Sales teams",
+        includes: ["Lead scoring", "Pipeline tracking", "Basic analytics", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$1,299",
+        period: "/month",
+        description: "Growing sales organizations",
+        includes: ["All Starter features", "Predictive close dates", "Revenue forecasting", "Deal alerts", "Win/loss analysis", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$2,499",
+        period: "/month",
+        description: "Large enterprises",
+        includes: ["All Professional features", "Custom scoring models", "Advanced analytics", "API access", "Team management", "24/7 support"]
+      }
     ],
+    attraction: "Know exactly which leads to chase and when they'll close. Build a predictable, data-driven sales machine.",
     freebies: [
       "Sales training workshop (2 sessions)",
       "Deal-closing script library"
@@ -386,21 +524,34 @@ const services: Service[] = [
 {
   icon: Zap,
   title: "Form Submission to CRM Instant Sync",
-  description: "Auto-sync form responses, survey answers, and contact info directly to your CRM—no manual data entry.",
+  description: "Auto-sync form responses, survey answers, and contact info directly to your CRM no manual data entry.",
   features: ["Multi-form integration", "Smart field mapping", "Real-time sync", "Automatic tagging"],
   details: {
     title: "Form Submission to CRM Instant Sync",
-    pricing: "₹16,000 setup + ₹5,000/month",
-    attraction: "Every form response lands in your CRM instantly. No more copy-paste, no more missed data.",
-    includes: [
-      "Integration with 10+ form platforms",
-      "Smart field mapping setup",
-      "Duplicate detection & merging",
-      "Automatic contact tagging",
-      "List segmentation based on responses",
-      "Real-time sync (no delays)",
-      "Monthly sync health report"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$149",
+        period: "/month",
+        description: "Getting started",
+        includes: ["Form integration", "Basic sync", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$349",
+        period: "/month",
+        description: "Growing businesses",
+        includes: ["All Starter features", "Multi-form support", "Smart mapping", "Auto-tagging", "Duplicate detection", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$749",
+        period: "/month",
+        description: "Large operations",
+        includes: ["All Professional features", "Unlimited forms", "Custom workflows", "Advanced analytics", "API access", "24/7 support"]
+      }
     ],
+    attraction: "Every form response lands in your CRM instantly. No more copy-paste, no more missed data.",
     freebies: [
       "Contact form optimization recommendations",
       "CRM field structure optimization"
@@ -426,17 +577,30 @@ const services: Service[] = [
   features: ["Automated review requests", "Multi-platform monitoring", "AI-suggested responses", "Reputation tracking"],
   details: {
     title: "Automated Review & Reputation Management",
-    pricing: "₹32,000 setup + ₹11,000/month",
-    attraction: "Turn satisfied customers into advocates. Automate review collection and protect your reputation online.",
-    includes: [
-      "Post-purchase review request automation",
-      "Multi-platform review monitoring (Google, Trustpilot, etc.)",
-      "AI-powered response suggestions",
-      "Negative review alerts",
-      "Review aggregation dashboard",
-      "Reputation score tracking",
-      "Monthly reputation analysis report"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$299",
+        period: "/month",
+        description: "Small businesses",
+        includes: ["Review requests", "Google monitoring", "Basic alerts", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$699",
+        period: "/month",
+        description: "Growing businesses",
+        includes: ["All Starter features", "Multi-platform monitoring", "AI responses", "Reputation tracking", "Monthly reports", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$1,399",
+        period: "/month",
+        description: "Large organizations",
+        includes: ["All Professional features", "Advanced analytics", "Team management", "Custom workflows", "API access", "24/7 support"]
+      }
     ],
+    attraction: "Turn satisfied customers into advocates. Automate review collection and protect your reputation online.",
     freebies: [
       "Review response template library",
       "Reputation management strategy guide"
@@ -458,22 +622,34 @@ const services: Service[] = [
 {
   icon: Megaphone,
   title: "Bulk SMS & Email Campaign Broadcaster",
-  description: "Send personalized SMS or email campaigns to thousands of customers in seconds—track opens and clicks.",
+  description: "Send personalized SMS or email campaigns to thousands of customers in seconds track opens and clicks.",
   features: ["Segmented targeting", "Template builder", "Personalization at scale", "Real-time tracking"],
   details: {
     title: "Bulk SMS & Email Campaign Broadcaster",
-    pricing: "₹24,000 setup + ₹8,000/month (+ message credits)",
-    attraction: "Launch campaigns to 1,000+ customers instantly. Direct channel to customer inboxes and phones.",
-    includes: [
-      "SMS + email campaign platform setup",
-      "Segment creation (demographics, behavior)",
-      "Template library (100+ templates)",
-      "Bulk message scheduling",
-      "Personalization at scale",
-      "Click tracking + analytics",
-      "List management & hygiene",
-      "Monthly campaign performance report"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$249",
+        period: "/month",
+        description: "Small campaigns",
+        includes: ["Email campaigns", "Basic templates", "List management", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$599",
+        period: "/month",
+        description: "Growing campaigns",
+        includes: ["All Starter features", "SMS + Email", "Advanced templates", "Segmentation", "Analytics", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$1,199",
+        period: "/month",
+        description: "Large-scale campaigns",
+        includes: ["All Professional features", "Unlimited contacts", "Advanced analytics", "API access", "Custom integrations", "24/7 support"]
+      }
     ],
+    attraction: "Launch campaigns to 1,000+ customers instantly. Direct channel to customer inboxes and phones.",
     freebies: [
       "SMS copywriting best practices guide",
       "Campaign template starter pack"
@@ -499,18 +675,30 @@ const services: Service[] = [
   features: ["Churn prediction AI", "Prevention workflows", "Win-back campaigns", "Retention metrics"],
   details: {
     title: "Cancellation & Churn Recovery Automation",
-    pricing: "₹60,000 setup + ₹20,000/month",
-    attraction: "Save 20% of customers before they cancel. Recover lost revenue automatically with smart retention.",
-    includes: [
-      "Churn prediction model training",
-      "Early warning system (at-risk customer alerts)",
-      "3-stage cancellation prevention workflow",
-      "Personalized retention offers",
-      "Win-back email sequences (for ex-customers)",
-      "Retention metrics dashboard",
-      "Monthly churn analysis report",
-      "Quarterly strategy optimization"
+    pricing: [
+      {
+        name: "Starter",
+        price: "$399",
+        period: "/month",
+        description: "Growing SaaS",
+        includes: ["Churn alerts", "Basic prevention", "Email sequences", "Email support"]
+      },
+      {
+        name: "Professional",
+        price: "$899",
+        period: "/month",
+        description: "Mid-market",
+        includes: ["All Starter features", "AI prediction", "Multi-touch workflows", "Personalized offers", "Analytics", "Priority support"]
+      },
+      {
+        name: "Enterprise",
+        price: "$1,799",
+        period: "/month",
+        description: "Large enterprises",
+        includes: ["All Professional features", "Advanced AI", "Win-back campaigns", "Custom workflows", "API access", "24/7 support"]
+      }
     ],
+    attraction: "Save 20% of customers before they cancel. Recover lost revenue automatically with smart retention.",
     freebies: [
       "Retention script library",
       "Customer lifecycle analysis"
@@ -526,7 +714,7 @@ const services: Service[] = [
       "Win-back conversion rate: 5-10%",
       "Churn rate reduction: 20%",
       "LTV improvement: +30%",
-      "Revenue retention: +₹50k-100k/month (avg)"
+      "Revenue retention: +$10-20k/month (avg)"
     ]
   }
 },

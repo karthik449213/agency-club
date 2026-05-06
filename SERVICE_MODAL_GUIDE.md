@@ -13,37 +13,37 @@ The service details modal has been successfully integrated into your agency-club
 - Close button (X icon)
 - Gradient background for visual appeal
 
-### 2. **Pricing Section** 💰
+### 2. **Pricing Section**
 ```
 ₹8,000 setup + ₹2,000/month (API cost extra)
 ```
 
-### 3. **Attraction Section** ✨
+### 3. **Attraction Section**
 ```
 Never miss a call again — 24/7 AI call handling.
 ```
 (Highlighted in a gradient box)
 
-### 4. **What's Included** 📦
+### 4. **What's Included**
 Displayed in a 2-column grid with check icons:
 - AI answers incoming calls
 - Collects caller details & intent
 - Routes calls or logs enquiries
 - Call summary sent to your team
 
-### 5. **Freebies (No Extra Cost)** 🎁
+### 5. **Freebies (No Extra Cost)**
 Green-highlighted section:
 - Custom greeting script
 - Business hours logic
 - Call summary template
 
-### 6. **Key Benefits** 🎯
+### 6. **Key Benefits**
 2-column grid layout:
 - No missed enquiries
 - Reduced staff load
 - Professional first impression
 
-### 7. **Expected Outcomes** 🚀
+### 7. **Expected Outcomes**
 Numbered list with priority styling:
 1. Higher enquiry capture
 2. Faster response

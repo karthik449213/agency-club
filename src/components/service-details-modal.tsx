@@ -4,14 +4,21 @@ import { motion } from "framer-motion";
 import { X, Check } from "lucide-react";
 import { useState } from "react";
 
+interface PricingTier {
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  includes: string[];
+}
+
 interface ServiceDetailsProps {
   isOpen: boolean;
   onClose: () => void;
   service: {
     title: string;
-    pricing: string;
+    pricing: PricingTier[];
     attraction: string;
-    includes: string[];
     freebies: string[];
     benefits: string[];
     outcomes: string[];
@@ -62,18 +69,46 @@ export function ServiceDetailsModal({
           <div className="px-6 py-8 space-y-8">
             {/* Pricing */}
             <div>
-              <h3 className="text-lg font-semibold text-primary mb-3 flex items-center gap-2">
-                💰 Pricing
+              <h3 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+                Pricing Plans
               </h3>
-              <p className="text-base md:text-lg text-foreground font-medium">
-                {service.pricing}
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {service.pricing.map((tier, index) => (
+                  <a
+                    key={index}
+                    href={`https://wa.me/917075543886?text=Hi! I'm interested in the ${encodeURIComponent(tier.name)} plan for ${encodeURIComponent(service.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group"
+                  >
+                    <div className="border border-border rounded-lg p-4 hover:border-primary/50 hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
+                      <div className="text-sm font-medium text-primary mb-2">{tier.name}</div>
+                      <div className="text-2xl font-bold text-foreground mb-1">
+                        {tier.price}
+                        <span className="text-sm text-muted-foreground font-normal">{tier.period}</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground mb-3">{tier.description}</p>
+                      <ul className="space-y-2">
+                        {tier.includes.slice(0, 3).map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-start gap-2 text-xs">
+                            <Check className="w-3 h-3 text-primary mt-0.5 shrink-0" />
+                            <span className="text-foreground">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {tier.includes.length > 3 && (
+                        <p className="text-xs text-primary mt-2">+{tier.includes.length - 3} more features</p>
+                      )}
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
 
             {/* Attraction */}
             <div className="bg-gradient-to-r from-primary/5 to-transparent border border-primary/10 rounded-lg p-4">
               <h3 className="text-lg font-semibold text-primary mb-3 flex items-center gap-2">
-                ✨ Why This Service?
+                Why This Service?
               </h3>
               <p className="text-base text-foreground leading-relaxed">
                 {service.attraction}
@@ -83,27 +118,17 @@ export function ServiceDetailsModal({
             {/* Includes */}
             <div>
               <h3 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
-                📦 What's Included
+                What's Included (varies by plan)
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {service.includes.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg border border-border/50"
-                  >
-                    <Check className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm md:text-base text-foreground">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <p className="text-sm text-muted-foreground">
+                Each pricing tier includes core features plus additional capabilities. Click on any plan above to get started with your preferred option.
+              </p>
             </div>
 
             {/* Freebies */}
             <div>
               <h3 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
-                🎁 Freebies (No Extra Cost)
+                Freebies (No Extra Cost)
               </h3>
               <div className="space-y-2 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-900/30 rounded-lg p-4">
                 {service.freebies.map((freebie, index) => (
@@ -120,7 +145,7 @@ export function ServiceDetailsModal({
             {/* Benefits */}
             <div>
               <h3 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
-                🎯 Key Benefits
+                Key Benefits
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {service.benefits.map((benefit, index) => (
@@ -140,7 +165,7 @@ export function ServiceDetailsModal({
             {/* Outcomes */}
             <div>
               <h3 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
-                🚀 Expected Outcomes
+                Expected Outcomes
               </h3>
               <div className="space-y-3">
                 {service.outcomes.map((outcome, index) => (
@@ -160,10 +185,10 @@ export function ServiceDetailsModal({
             </div>
 
             {/* CTA */}
-            <div className="pt-4 border-t border-border">
-              <button className="w-full bg-primary text-primary-foreground font-semibold py-3 rounded-lg hover:bg-primary/90 transition-colors">
-                Get Started Now
-              </button>
+            <div className="pt-4 border-t border-border bg-primary/5 p-4 rounded-lg">
+              <p className="text-sm text-foreground text-center">
+                Ready to get started? Select your preferred plan above to connect with our team via WhatsApp
+              </p>
             </div>
           </div>
         </div>

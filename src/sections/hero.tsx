@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -50,10 +51,14 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button size="lg" className="text-lg px-8 py-4">
-              Start Your Automation Journey
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link href="https://wa.me/917075543886?text=Hi! I'm interested in learning more about your automation services." target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="text-lg px-8 py-4" asChild>
+                <span>
+                  Start Your Automation Journey
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </span>
+              </Button>
+            </Link>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4">
               <Play className="mr-2 h-5 w-5" />
               Watch Demo
